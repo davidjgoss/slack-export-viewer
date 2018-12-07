@@ -1,3 +1,5 @@
+const WORKSPACE_NAME = "example-workspace";
+
 const fs = require("fs"),
     rimraf = require("rimraf"),
     Handlebars = require("handlebars"),
@@ -21,7 +23,7 @@ console.log("Generating site...");
 Handlebars.registerHelper("view_channel", render);
 Metalsmith(__dirname)
     .metadata({
-        workspaceName: "example-workspace",
+        workspaceName: WORKSPACE_NAME,
         slack: slackData
     })
     .source('./src')
