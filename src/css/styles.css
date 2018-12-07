@@ -1,0 +1,89 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI',Helvetica,sans-serif;
+}
+
+a {
+    color: mediumblue;
+}
+
+code {
+    font-size: 0.8em;
+    font-family: Consolas,monospace;
+    background-color: #333;
+    color: #fff;
+    outline: 0.125em solid #333;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre {
+    white-space: pre;
+    overflow: auto;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    margin: 0.5rem 0;
+}
+
+pre code {
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15rem;
+    padding: 1.5rem;
+    background-color: #052c36;
+    color: white;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav__title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.nav__anchor {
+    color: white;
+    text-decoration: none;
+}
+
+.nav__anchor:hover {
+    text-decoration: underline;
+}
+
+.main {
+    margin-left: 15rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.headline {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    padding: 1.5rem 0;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.messages__item:not(:first-child){
+    margin-top: 0.5rem;
+}
+
+.messages__timestamp {
+    color: #999;
+}
+
+.messages__mention {
+    background-color: lightblue;
+    color: mediumblue;
+}

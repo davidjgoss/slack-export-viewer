@@ -1,0 +1,35 @@
+{
+  "name": "slack-export-viewer",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "start": "http-server ./build -p4000 -o",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidjgoss/slack-export-viewer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidjgoss/slack-export-viewer/issues"
+  },
+  "homepage": "https://github.com/davidjgoss/slack-export-viewer#readme",
+  "dependencies": {
+    "ava": "^0.25.0",
+    "http-server": "^0.11.1",
+    "jstransformer-handlebars": "^1.1.0",
+    "lodash": "^4.17.11",
+    "marked": "^0.5.2",
+    "metalsmith": "^2.3.0",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-discover-partials": "^0.1.2",
+    "metalsmith-layouts": "^2.3.0",
+    "moment": "^2.22.2",
+    "rimraf": "^2.6.2"
+  }
+}

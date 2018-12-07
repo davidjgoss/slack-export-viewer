@@ -1,0 +1,115 @@
+/* @module reset
+ * <https://github.com/davidjgoss/modern-reset>
+ * A conservative CSS reset to undo some browser defaults
+ * and give us a reliable starting point for styling
+ * derived from <http://meyerweb.com/eric/tools/css/reset/>
+ */
+
+/* reset type and box model for non-form elements */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, hr,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, main,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+/* results are too inconsistent to reset box model on form
+ * elements, but we still want to reset the type */
+input, textarea, select, button {
+    font: inherit;
+    font-size: 100%;
+}
+
+/* set absolutely everything to inherit its box-sizing, and then set the
+ * root element to `border-box` - this means we'll always have the nice
+ * box-model by default, unless a specific component overrides it.
+ */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+/* stop mobile browsers screwing with text size */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* no bullets or numerals by default */
+ol, ul {
+    list-style: none;
+}
+
+/* no automatic quote marks */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: none;
+}
+
+/* bunch up table borders and don't add extra spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* raster and svg images should be responsive by default */
+img,
+svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* sensible defaults for text-level semantic elements */
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+del {
+    opacity: 0.8;
+    text-decoration: line-through;
+}
+
+sub {
+    font-size: 0.875em;
+    vertical-align: sub;
+}
+
+sup {
+    font-size: 0.875em;
+    vertical-align: super;
+}
+
+/* prevent text in draggable items being selectable */
+[draggable] {
+    user-select: none;
+}
