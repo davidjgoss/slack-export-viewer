@@ -12,6 +12,14 @@ const fs = require("fs"),
 console.log("Processing exported Slack data...");
 const slackData = require("./lib/data")();
 rimraf.sync("./src/channels/*.html");
+
+// Index
+fs.writeFileSync(`./src/channels/index.html`, 
+`---
+layout: channel_index.hbs
+---`);
+
+// All other channels
 Object.keys(slackData.channels).forEach(channelName => {
     fs.writeFileSync(`./src/channels/${channelName}.html`, `---
 layout: channel.hbs
