@@ -39,6 +39,7 @@ function getColor(cname) {
   return window.localStorage.getItem('color')
 }
 
+/* https://stackoverflow.com/a/2348659 */
 function toHSL(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
