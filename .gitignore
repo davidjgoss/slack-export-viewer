@@ -73,3 +73,6 @@ build/
 
 # intellij/webstorm
 .idea/
+
+# Visual Studio Code
+.vscode/

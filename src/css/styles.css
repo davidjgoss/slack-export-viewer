@@ -1,13 +1,14 @@
 :root {
-    --h: 182;
-    --s: 0%; /*the base color*/
-    --l: 50%; /*the initial lightness*/
+    --h: 182; /* hue */
+    --s: 0%; /* saturation */
+    --l: 50%; /* lightness */
 
     --nav-bg: hsl(var(--h), var(--s), var(--l));
     --nav-scroll: hsl(var(--h), var(--s), calc(var(--l) + 20%));
     --nav-scroll-hover: hsl(var(--h), var(--s), calc(var(--l) + 30%));
     --nav-scroll-bg: hsl(var(--h), var(--s), calc(var(--l) - 10%));
     --nav-item: hsl(calc(var(--h) + 75), var(--s), calc(var(--l) + 20%));
+    --nav-item-text: hsl(calc(var(--h) - 150), var(--s), calc(var(--l) - 20%)); /* Run oposite to --nav-item */
 }
 
 html {
@@ -89,6 +90,10 @@ iframe {
 }
 .nav__item:hover {
     background: var(--nav-item);
+}
+
+.nav__item:hover > a {
+    color: var(--nav-item-text);
 }
 
 .nav__list {
