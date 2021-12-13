@@ -146,3 +146,21 @@ iframe {
 #colorPicker {
     display: none;
 }
+
+.user_profile_picture {
+    width:2em;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0.5em;
+}
+
+.user_profile_picture > img {
+    width: 2rem;
+    height: auto;
+    border-radius: 0.5em;
+}
+
+.user_message {
+    width: calc(100% - 2.3em);
+    display: inline-block;
+}
