@@ -1,7 +1,6 @@
 const WORKSPACE_NAME = "example-workspace";
 
 const fs = require("fs"),
-    rimraf = require("rimraf"),
     Handlebars = require("handlebars"),
     Metalsmith = require('metalsmith'),
     collections = require('metalsmith-collections'),
@@ -11,7 +10,18 @@ const fs = require("fs"),
 
 console.log("Processing exported Slack data...");
 const slackData = require("./lib/data")();
-rimraf.sync("./src/channels/*.html");
+
+// Remove src/channels/
+fs.rmSync("./src/channels/*.html", { recursive: true, force: true });
+
+console.log("Generating templates...");
+// Index
+fs.writeFileSync(`./src/channels/index.html`, 
+`---
+layout: channel_index.hbs
+---`);
+
+// All other channels
 Object.keys(slackData.channels).forEach(channelName => {
     fs.writeFileSync(`./src/channels/${channelName}.html`, `---
 layout: channel.hbs
@@ -19,7 +29,7 @@ name: ${channelName}
 ---`);
 });
 
-console.log("Generating site...");
+console.log("Transforming templates...");
 Handlebars.registerHelper("view_channel", render);
 Metalsmith(__dirname)
     .metadata({
@@ -31,7 +41,10 @@ Metalsmith(__dirname)
     .clean(true)
     .use(collections({
         channels: {
-            pattern: 'channels/*.html'
+            pattern: 'channels/*.html',
+            filterBy: function(channelFile){
+                return channelFile.path != "channels\\index.html" 
+            }
         }
     }))
     .use(discoverPartials())
